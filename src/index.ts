@@ -11,8 +11,4 @@ app.get("/", (req, res) => {
 });
 
 app.use("/user", userRoute);
-
 app.listen(3000);
-
-// userCreate("ash2", "Ashwin", "ashwinkotiyal@ybls");
-//create todo

@@ -1,6 +1,6 @@
 import express from "express";
 import z from "zod";
-import userCreate from "../createUser";
+import userCreate from "../create";
 
 const userRoute = express.Router();
 

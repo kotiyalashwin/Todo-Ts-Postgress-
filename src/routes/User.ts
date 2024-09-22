@@ -1,6 +1,7 @@
 import express from "express";
 import z from "zod";
-import { userCreate } from "../create";
+import { userCreate } from "../controller";
+import { getTodo } from "../controller";
 
 const userRoute = express.Router();
 
@@ -33,6 +34,16 @@ userRoute.post("/new", async (req, res) => {
       msg: e,
     });
   }
+});
+
+userRoute.get("/:name/todo", async (req, res) => {
+  const user = req.params.name;
+
+  const data = await getTodo(user);
+
+  res.json({
+    data: data,
+  });
 });
 
 export default userRoute;

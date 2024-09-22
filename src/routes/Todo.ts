@@ -1,6 +1,6 @@
 import express from "express";
 import z from "zod";
-import { todoCreate } from "../create";
+import { todoCreate } from "../controller";
 const todoRoute = express.Router();
 
 const todoSchema = z.object({

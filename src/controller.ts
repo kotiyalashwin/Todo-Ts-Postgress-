@@ -30,3 +30,18 @@ export async function todoCreate(
 
   console.log(newTodo);
 }
+
+export async function getTodo(user: string) {
+  const data = await prisma.users.findUniqueOrThrow({
+    where: {
+      username: user,
+    },
+    select: {
+      username: true,
+      todos: true,
+      email: true,
+    },
+  });
+
+  return data;
+}
